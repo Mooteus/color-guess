@@ -43,6 +43,7 @@ circleClick.addEventListener('click', (e) => {
 function resetGame() {
   const circleContainer = document.getElementById('circle-container');
   circleContainer.innerHTML = '';
+  generateRgbColor();
   renderCircles();
 }
 
