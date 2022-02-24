@@ -1,4 +1,5 @@
 let colorResp;
+let scoreCount = 0;
 
 function generateRgbColor() {
   const red = Math.round(Math.random() * 256);
@@ -33,8 +34,11 @@ function renderCircles() {
 const circleClick = document.getElementById('circle-container');
 circleClick.addEventListener('click', (e) => {
   const answer = document.getElementById('answer');
+  const score = document.getElementById('score');
   if (e.target.style.backgroundColor === `rgb(${colorResp})`) {
     answer.innerText = 'Acertou!';
+    scoreCount += 3;
+    score.innerText = scoreCount;
   } else {
     answer.innerText = 'Errou! Tente novamente!';
   }
@@ -42,6 +46,8 @@ circleClick.addEventListener('click', (e) => {
 
 function resetGame() {
   const circleContainer = document.getElementById('circle-container');
+  const answer = document.getElementById('answer');
+  answer.innerText = 'Escolha uma cor';
   circleContainer.innerHTML = '';
   generateRgbColor();
   renderCircles();
