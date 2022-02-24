@@ -6,7 +6,7 @@ function generateRgbColor() {
   const blue = Math.round(Math.random() * 256);
   const textRgb = document.getElementById('rgb-color');
   textRgb.innerText = `(${red},${green},${blue})`;
-  colorResp = `${red},${green},${blue}`;
+  colorResp = `${red}, ${green}, ${blue}`;
 }
 
 function renderCircles() {
@@ -29,6 +29,16 @@ function renderCircles() {
     circleContainer.appendChild(circle);
   }
 }
+
+const circleClick = document.getElementById('circle-container');
+circleClick.addEventListener('click', (e) => {
+  const answer = document.getElementById('answer');
+  if (e.target.style.backgroundColor === `rgb(${colorResp})`) {
+    answer.innerText = 'Acertou!';
+  } else {
+    answer.innerText = 'Errou! Tente novamente!';
+  }
+});
 
 window.onload = () => {
   generateRgbColor();
