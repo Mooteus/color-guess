@@ -16,7 +16,7 @@ function renderCircles() {
   const circleContainer = document.getElementById('circle-container');
   let circle;
   circle = document.createElement('div');
-  circle.classList.add('circle');
+  circle.classList.add('ball');
   circle.style.backgroundColor = `rgb(${colorResp})`;
   circleContainer.appendChild(circle);
   for (let i = 0; i < 5; i += 1) {
@@ -24,7 +24,7 @@ function renderCircles() {
     green = Math.round(Math.random() * 256);
     blue = Math.round(Math.random() * 256);
     circle = document.createElement('div');
-    circle.classList.add('circle');
+    circle.classList.add('ball');
     circle.style.backgroundColor = `rgb(${red},${green},${blue})`;
     circleContainer.appendChild(circle);
   }
