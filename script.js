@@ -40,6 +40,17 @@ circleClick.addEventListener('click', (e) => {
   }
 });
 
+function resetGame() {
+  const circleContainer = document.getElementById('circle-container');
+  circleContainer.innerHTML = '';
+  renderCircles();
+}
+
+const resetClick = document.getElementById('reset-game');
+resetClick.addEventListener('click', () => {
+  resetGame();
+});
+
 window.onload = () => {
   generateRgbColor();
   renderCircles();
