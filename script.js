@@ -1,5 +1,6 @@
 let colorResp;
 let scoreCount = 0;
+const circleContainer = document.getElementById('circle-container');
 
 function generateRgbColor() {
   const red = Math.round(Math.random() * 256);
@@ -14,7 +15,6 @@ function renderCircles() {
   let red;
   let green;
   let blue;
-  const circleContainer = document.getElementById('circle-container');
   let circle;
   circle = document.createElement('div');
   circle.classList.add('ball');
@@ -31,7 +31,7 @@ function renderCircles() {
   }
 }
 
-const circleClick = document.getElementById('circle-container');
+const circleClick = circleContainer;
 circleClick.addEventListener('click', (e) => {
   const answer = document.getElementById('answer');
   const score = document.getElementById('score');
@@ -45,7 +45,6 @@ circleClick.addEventListener('click', (e) => {
 });
 
 function resetGame() {
-  const circleContainer = document.getElementById('circle-container');
   const answer = document.getElementById('answer');
   answer.innerText = 'Escolha uma cor';
   circleContainer.innerHTML = '';
